@@ -5,13 +5,6 @@ const globalConfig = {
   IS_DEFAULT_PROMPTS_ENABLED: true,
   // Default prompts to display in the chat
   DISPLAY_DEFAULT_PROMPTS_BUTTON: 'Not sure what to ask? Try our suggestions!',
-  DEFAULT_PROMPTS: [
-    'How to search and book rentals?',
-    'What is the refund policy?',
-    'How to contact a representative?',
-  ],
-  DEFAULT_PROMPTS_HEADING_CHAT: 'Chat with our support team',
-  DEFAULT_PROMPTS_HEADING_ASK: 'Ask a question',
   // This are the chat bubbles that will be displayed in the chat
   CHAT_MESSAGES: [],
   // This are the labels for the chat button and input
@@ -37,6 +30,23 @@ const globalConfig = {
   CITATIONS_LABEL: 'Citations',
 };
 
+const teaserListTexts = {
+  TEASER_CTA_LABEL: 'Ask now',
+  HEADING_CHAT: 'Chat with our support team',
+  HEADING_ASK: 'Ask a question',
+  DEFAULT_PROMPTS: [
+    {
+      description: 'How to search and book rentals?',
+    },
+    {
+      description: 'What is the refund policy?',
+    },
+    {
+      description: 'How to contact a representative?',
+    },
+  ],
+};
+
 const NEXT_QUESTION_INDICATOR = 'Next Questions:';
 
 const requestOptions = {
@@ -58,4 +68,4 @@ const chatHttpOptions = {
 
 const APPROACH_MODEL = ['rrr', 'rtr'];
 
-export { globalConfig, requestOptions, chatHttpOptions, NEXT_QUESTION_INDICATOR, APPROACH_MODEL };
+export { globalConfig, requestOptions, chatHttpOptions, NEXT_QUESTION_INDICATOR, APPROACH_MODEL, teaserListTexts };
