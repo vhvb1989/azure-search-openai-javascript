@@ -92,7 +92,7 @@ declare type BotResponseMessage = Message & {
 };
 
 declare interface BotResponseError {
-  error?: string;
-  statusCode?: number;
-  message?: string;
+  error: string;
+  code: string;
+  message: string;
 }
