@@ -1,3 +1,4 @@
+import { ChatResponseError } from '../../utils/index.js';
 import { readStream } from '../stream/index.js';
 
 export async function parseStreamedMessages({
@@ -26,6 +27,9 @@ export async function parseStreamedMessages({
   };
 
   for await (const chunk of chunks) {
+    if (chunk.statusCode && chunk.statusCode > 299) {
+      throw new ChatResponseError('API chunk has an error', chunk.statusCode);
+    }
     const { content, context } = chunk.choices[0].delta;
     if (context?.data_points) {
       result.data_points = context.data_points ?? [];
